@@ -2,6 +2,12 @@
 
 Projeto desenvolvido para demonstrar a utilização do Kafka com Spring Boot e Docker.
 
+# Desenho de Arquitetura da Api
+<div align="center">
+<img src="https://user-images.githubusercontent.com/5739362/164945727-07d727ae-01a9-4fc7-9275-a6d145e5bf8c.PNG"/>
+</div>
+
+
 ### Utilização da aplicação:
 A aplicação deve receber como entrada as seguintes informações conforme definido na especificação de cada rota descrito abaixo.:
 

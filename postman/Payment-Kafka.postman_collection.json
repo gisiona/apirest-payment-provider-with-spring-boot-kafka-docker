@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "63124168-c442-4dee-8347-3098732594de",
+		"name": "Payment-Kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createPayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero_pedido\": \"{{$guid}}\",\r\n    \"descricao_pedido\": \"Geladeira Inox Eletrolux\",\r\n    \"valor_total_pedido\": 2998.00,\r\n    \"nome_cliente\": \"gisiona costa souza\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1020/api/v1/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1020",
+					"path": [
+						"api",
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyPayment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1020/api/v1/payments/8f000dc6-abdb-4c2c-8da4-945c3f50bcea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1020",
+					"path": [
+						"api",
+						"v1",
+						"payments",
+						"8f000dc6-abdb-4c2c-8da4-945c3f50bcea"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

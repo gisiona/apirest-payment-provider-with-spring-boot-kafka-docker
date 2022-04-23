@@ -46,8 +46,6 @@ public class PaymentServiceImpl implements PaymentService {
 
             this.paymentProducerKafka.send(paymentId, data);
 
-            paymentRepository.createPayment(paymentId, response);
-
             return response;
         } catch (PaymentProducerKafkaException paymentProducerKafkaException) {
             throw new PaymentRuntimeException(paymentProducerKafkaException.getErro());

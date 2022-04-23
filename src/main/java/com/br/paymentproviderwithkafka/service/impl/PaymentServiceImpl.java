@@ -50,13 +50,13 @@ public class PaymentServiceImpl implements PaymentService {
 
             return response;
         } catch (PaymentProducerKafkaException paymentProducerKafkaException) {
-            throw new PaymentRuntimeException();
+            throw new PaymentRuntimeException(paymentProducerKafkaException.getErro());
         } catch (JsonProcessingException jsonProcessingException) {
             log.error("Erro ao converter em json paymentId {}. Detalhes: {}", paymentId, jsonProcessingException);
-            throw new PaymentRuntimeException();
+            throw new PaymentRuntimeException("Erro ao converter em json o payment");
         } catch (Exception ex) {
             log.error("Erro ao processar paymentId {}. Detalhes: {}", paymentId, ex);
-            throw new PaymentRuntimeException();
+            throw new PaymentRuntimeException("Erro ao processar payment");
         }
     }
 
@@ -67,7 +67,7 @@ public class PaymentServiceImpl implements PaymentService {
             return paymentResponse;
         } catch (Exception ex) {
             log.error("Erro ao consultar paymentId {}. Detalhes: {}", paymentId, ex);
-            throw new PaymentRuntimeException();
+            throw new PaymentRuntimeException("Erro ao consultar payment");
         }
     }
 }

@@ -24,7 +24,7 @@ public class PaymentProducerKafka {
             log.info("Payment enviado com sucesso para o kafka. PaymentId {}, Payload {}",paymentId, paymentRequestDto);
         } catch (Exception exception) {
             log.error("Erro ao enviar para o kafka o paymentId {}. Detalhes: {}", paymentId, exception);
-            throw new PaymentProducerKafkaException();
+            throw new PaymentProducerKafkaException("Erro ao enviar para o kafka o payment");
         }
     }
 }
